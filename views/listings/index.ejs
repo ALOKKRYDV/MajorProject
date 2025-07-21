@@ -1,0 +1,71 @@
+<%layout("/layouts/boilerplate.ejs")%>
+<div id="filters"  class="collapse d-flex flex-wrap justify-content-center">
+    <a href="/search/filter/Trending"><div id="filter">
+        <i class="fa-solid fa-fire"></i>
+       <p>Trending</p>
+    </div></a>
+    <a href="/search/filter/Rooms"><div id="filter">
+        <i class="fa-solid fa-bed"></i>
+        <p>Rooms</p>
+    </div></a>
+    <a href="/search/filter/Iconic-cities"><div id="filter">
+        <i class="fa-solid fa-mountain-city"></i>
+       <p>Iconic cities</p>
+    </div></a>
+    <a href="/search/filter/Mountains"><div id="filter">
+        <i class="fa-solid fa-mountain"></i>
+        <p>Mountains</p>
+    </div></a>
+    <a href="/search/filter/Castels"><div id="filter">
+        <i class="fa-brands fa-fort-awesome"></i>
+       <p>Castels</p>
+    </div></a>
+    <a href="/search/filter/Amazing-pool"><div id="filter">
+        <i class="fa-solid fa-person-swimming"></i>
+        <p>Amazing Pools</p>
+    </div></a>
+    <a href="/search/filter/Camping"><div id="filter">
+        <i class="fa-solid fa-campground"></i>
+        <p>Camping</p>
+    </div></a>
+    <a href="/search/filter/Farms"><div id="filter">
+        <i class="fa-solid fa-cow"></i>
+       <p>Farms</p>
+    </div></a>
+    <a href="/search/filter/Arctic"><div id="filter">
+        <i class="fa-regular fa-snowflake"></i>
+        <p>Arctic</p>
+    </div></a>
+    <div class="tax-toggle">
+        <div class="form-check-reverse form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+            <label class="form-check-label" for="switchCheckDefault">Display total after taxes</label>
+        </div>
+    </div>
+</div>
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+    <% result.forEach(function(listing) { %>
+    <a href="/listings/<%=listing.id%>" class="text-decoration-none text-dark">
+    <div class="card col listing-card" >
+        <img src="<%= listing.image.url %>" class="card-img-top" style="height: 22rem;" alt="<%= listing.title %>">
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+            <p class="card-text">
+            <b><%= listing.title %></b>
+            <br><b>Price:</b> &#8377; <%= listing.price.toLocaleString("en-IN") %>
+            <i class="tax-info tax">&nbsp;&nbsp;+18% GST</i></p>
+        </div>
+    </div>
+    </a>
+<% }); %>
+</div>
+
+<script>
+    let taxToggle = document.getElementById('switchCheckDefault');
+    taxToggle.addEventListener('click', function() {
+    let tax = document.querySelectorAll('.tax');
+    tax.forEach(function(taxInfo) {
+        taxInfo.style.display = taxToggle.checked ? 'inline' : 'none';
+    });
+    });
+</script>

@@ -1,0 +1,8 @@
+<%-layout("/layouts/boilerplate.ejs")%>
+<div class="alert alert-dark" role="alert">
+    <h1 class="text-center">Error <%= status %></h1>
+    <p class="text-center"><%= message %></p>
+    <div class="text-center">
+        <a href="/listings" class="btn btn-primary">Go to listings</a>
+    </div>
+</div>

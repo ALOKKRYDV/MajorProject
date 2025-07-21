@@ -1,0 +1,129 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container{
+    flex: 1;
+}
+a{
+    text-decoration: none;
+}
+.navbar {
+    height: 5rem;
+    background-color: #fff
+}
+.fa-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+.nav-link {
+    color: #222 !important;
+}
+.f-info-links a{
+    text-decoration: none;
+    color: #222;
+}
+.f-info-social a{
+    color: #222;
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+.f-info{
+    height: 8rem;
+    background-color: #ebebeb;
+    text-align: center;
+}
+.f-info div{
+    height: 2.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.f-info-social a {
+    margin-right: 1rem;
+}
+
+/* Cards */
+.listing-card {
+    margin-right: .5rem;
+    margin-bottom: 2rem;
+    border: none !important;
+}
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+.card-body {
+
+    padding: 0 !important;
+}
+/* card effect */
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover {
+    background-color: white;
+    opacity: 0.2;
+}
+.add-btn , .edit-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+/* show effect */
+.show-img {
+    width: 30vh;
+}
+.btns{
+    display: flex;
+}
+.show-card {
+    padding: 0;
+}
+#map {
+    width: 90vh;
+    height: 330px;
+}
+.card{
+    --bs-card-border-width: none !important;
+}
+
+#filters {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+#filter {
+    text-align: center;
+    margin-right : 1rem;
+    margin-top : 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    opacity: 0.7;
+    color: black;
+}
+#filter:hover {
+    opacity: 1;
+    background-color: #e9ecef;
+}
+#filter p {
+    font-size: 0.8rem;
+}
+.tax-toggle {
+    margin-left: auto;
+    margin-right: 1rem;
+    border: 1px solid black;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+.tax-info{
+    display: none;
+}
+#filters a{
+    text-decoration: none;
+}
