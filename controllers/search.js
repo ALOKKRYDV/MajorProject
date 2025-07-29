@@ -3,15 +3,15 @@ const listings = require('../models/listing.js');
 module.exports.searchListing=async (req, res) => {
     const {name} = req.query;
     try{
-        const results = await listings.find({
-            title: { $regex: name, $options: 'i' } // case-insensitive partial match
+        const result = await listings.find({
+            country: { $regex: name, $options: 'i' } // case-insensitive partial match
         });
-        const result = results[0];
+       
         if (result.length === 0) {
-            req.flash('error', 'No listings found for the given name.');
+            req.flash('error', 'No listings found for the given Country.');
             return res.redirect('/listings');
         }
-       res.render("listings/show.ejs",{result});
+       res.render("listings/index.ejs",{result});
        
     }catch (err) {
         console.error(err);
