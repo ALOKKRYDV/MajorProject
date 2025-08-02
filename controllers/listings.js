@@ -54,7 +54,7 @@ module.exports.editListing = async (req, res) => {
 module.exports.updateListing = async (req, res) => {
     let {id}=req.params;
     let {title,description,price,location,country,category}=req.body;
-        await listing.findByIdAndUpdate(id, {
+       let Listing = await listing.findByIdAndUpdate(id, {
             title: title,
             description : description,
             
@@ -66,11 +66,11 @@ module.exports.updateListing = async (req, res) => {
         if(typeof req.file !== "undefined"){
         let url = req.file.path;
         let filename = req.file.filename;
-        listing.image = {
+        Listing.image = {
             filename: filename, // Use the filename from multer
             url: url // Use the path from multer
         };
-        await listing.save();
+        await Listing.save();
     }
         req.flash('success', 'Listing updated successfully!');
         res.redirect(`/listings/${id}`);
